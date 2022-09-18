@@ -1,4 +1,4 @@
-DIY project planner app in the making: 
+DIY project planner app in the making!
 
 First Scribble:
 
