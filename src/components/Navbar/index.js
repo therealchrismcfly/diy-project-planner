@@ -9,7 +9,9 @@ export default function Navbar() {
 		<StyledNavbar>
 			<Link href="/">Projects</Link>
 			<Link href="/newproject">
-				<StyledAddButton>+</StyledAddButton>
+				<a>
+					<StyledAddButton>+</StyledAddButton>
+				</a>
 			</Link>
 			<Link href="/profile">Profile</Link>
 		</StyledNavbar>
