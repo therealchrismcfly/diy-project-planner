@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const StyledAddButton = styled.button`
+const StyledButton = styled.button`
 	background-color: lavender;
 `;
 
-export default StyledAddButton;
+export default StyledButton;

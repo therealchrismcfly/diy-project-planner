@@ -6,9 +6,16 @@ const useStore = create(set => ({
 	addProject: name => {
 		set(state => {
 			return {
-				projects: [...state.projects, {id: nanoid(), name}],
+				projects: [...state.projects, {id: nanoid(), name, isDone: false}],
 			};
 		});
+	},
+	checkProject: id => {
+		set(state => ({
+			projects: state.projects.map(project =>
+				project.id === id ? {...project, isDone: !project.isDone} : project
+			),
+		}));
 	},
 }));
 
