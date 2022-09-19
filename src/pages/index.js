@@ -1,21 +1,21 @@
-import {nanoid} from 'nanoid';
 import {useState} from 'react';
 
 import StyledAddButton from '../components/StyledAddButton/styled';
 import StyledInputField from '../components/StyledInputField/styled';
 import StyledProjectName from '../components/StyledProjectName/styled';
+import useStore from '../hooks/useStore';
 
 export default function IndexPage() {
 	const [inputValue, setInputValue] = useState('');
-	const [projects, setProjects] = useState([{name: 'Pflanzentreppe', id: nanoid()}]);
+	const addProject = useStore(state => state.addProject);
+	const projects = useStore(state => state.projects);
 
 	return (
 		<>
 			<form
 				onSubmit={event => {
 					event.preventDefault();
-					setProjects([...projects, {name: inputValue, id: nanoid()}]);
-					setInputValue('');
+					addProject(inputValue);
 				}}
 			>
 				{' '}
