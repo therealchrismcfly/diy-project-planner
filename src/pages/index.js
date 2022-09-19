@@ -1,5 +1,6 @@
 import StyledCheckbox from '../components/Checkbox/styled';
 import Layout from '../components/Layout';
+import StyledProjectContainer from '../components/StyledProjectContainer/styled';
 import StyledProjectName from '../components/StyledProjectName/styled';
 import useStore from '../hooks/useStore';
 
@@ -10,7 +11,7 @@ export default function IndexPage() {
 
 	return (
 		<Layout>
-			<ul>
+			<StyledProjectContainer>
 				{sortedProjects.map(project => {
 					return (
 						<StyledProjectName key={project.id}>
@@ -25,7 +26,7 @@ export default function IndexPage() {
 						</StyledProjectName>
 					);
 				})}
-			</ul>
+			</StyledProjectContainer>
 		</Layout>
 	);
 }
