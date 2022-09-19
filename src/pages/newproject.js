@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
 import Layout from '../components/Layout';
-import StyledAddButton from '../components/StyledAddButton/styled';
+import StyledButton from '../components/StyledButton/styled';
 import StyledInputField from '../components/StyledInputField/styled';
 import useStore from '../hooks/useStore';
 
@@ -31,7 +31,7 @@ export default function NewProjectPage() {
 						}}
 					/>
 				</label>
-				<StyledAddButton type="submit">add</StyledAddButton>
+				<StyledButton type="submit">add</StyledButton>
 			</form>
 		</Layout>
 	);
