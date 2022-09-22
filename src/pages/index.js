@@ -34,7 +34,7 @@ export default function IndexPage() {
 							>
 								delete
 							</StyledButton>
-							<Link href="/edit">
+							<Link href={`/edit/${project.id}`}>
 								<a>
 									<StyledButton>edit</StyledButton>
 								</a>
