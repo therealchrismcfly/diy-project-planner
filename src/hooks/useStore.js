@@ -2,7 +2,10 @@ import {nanoid} from 'nanoid';
 import create from 'zustand';
 
 const useStore = create(set => ({
-	projects: [{name: 'Pflanzenleiter', id: nanoid()}],
+	projects: [
+		{name: 'Pflanzenleiter', id: nanoid()},
+		{name: 'Bilderrahmen', id: nanoid()},
+	],
 	addProject: name => {
 		set(state => {
 			return {

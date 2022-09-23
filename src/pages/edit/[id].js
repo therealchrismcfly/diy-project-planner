@@ -1,23 +1,33 @@
+import {useRouter} from 'next/router';
 import {useState} from 'react';
 
-import Layout from '../components/Layout';
-import StyledButton from '../components/StyledButton/styled';
-import StyledInputField from '../components/StyledInputField/styled';
-import useStore from '../hooks/useStore';
+import Layout from '../../components/Layout';
+import StyledButton from '../../components/StyledButton/styled';
+import StyledInputField from '../../components/StyledInputField/styled';
+import useStore from '../../hooks/useStore';
 
 export default function EditProjectPage() {
 	const [link, setLink] = useState('');
-	const [shoppingItem, setShoppingItem] = useState('');
-	const [note, setNote] = useState('');
+	/* 	const [shoppingItem, setShoppingItem] = useState('');
+	const [note, setNote] = useState(''); */
+	const projects = useStore(state => state.projects);
 	const links = useStore(state => state.links);
 	const addLink = useStore(state => state.addLink);
-	const notes = useStore(state => state.notes);
+	/* 	const notes = useStore(state => state.notes);
 	const addNote = useStore(state => state.addNote);
 	const shoppingItems = useStore(state => state.shoppingItems);
-	const addShoppingItem = useStore(state => state.addShoppingItem);
+	const addShoppingItem = useStore(state => state.addShoppingItem); */
+	const router = useRouter();
+	const {id} = router.query;
+	const entry = projects.find(entry => entry.id === String(id));
+
+	if (!entry) {
+		return;
+	}
+
 	return (
 		<Layout>
-			<h1>Pflanzentreppe</h1>
+			<h1>{entry.name}</h1>
 			<h2>Inspo Images</h2>
 			<p>Hier kommt ein Image Upload hin!</p>
 			<br />
@@ -41,7 +51,7 @@ export default function EditProjectPage() {
 				})}
 			</form>
 
-			<h2>Einkaufsliste</h2>
+			{/* <h2>Einkaufsliste</h2>
 			<form
 				onSubmit={event => {
 					event.preventDefault();
@@ -78,7 +88,7 @@ export default function EditProjectPage() {
 				{notes.map(note => {
 					return <p key={note.id}>{note.name}</p>;
 				})}
-			</form>
+			</form> */}
 		</Layout>
 	);
 }
