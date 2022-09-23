@@ -4,7 +4,7 @@ const StyledAddButton = styled.button`
 	position: fixed;
 	bottom: 30px;
 	left: 130px;
-	padding: 20px;
+	padding: 15px;
 	border: none;
 	border-radius: 50px;
 	background-color: pink;

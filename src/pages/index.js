@@ -1,8 +1,9 @@
 import Link from 'next/link';
 
 import StyledCheckbox from '../components/Checkbox/styled';
+import IconButton from '../components/IconButton/styled';
+import Icon from '../components/Icons.js';
 import Layout from '../components/Layout';
-import StyledButton from '../components/StyledButton/styled';
 import StyledProjectContainer from '../components/StyledProjectContainer/styled';
 import StyledProjectName from '../components/StyledProjectName/styled';
 import useStore from '../hooks/useStore';
@@ -27,16 +28,16 @@ export default function IndexPage() {
 									checkProject(project.id);
 								}}
 							/>
-							<StyledButton
+							<IconButton
 								onClick={() => {
 									deleteProject(project.id);
 								}}
 							>
-								delete
-							</StyledButton>
+								<Icon variant="delete" />
+							</IconButton>
 							<Link href={`/edit/${project.id}`}>
 								<a>
-									<StyledButton>edit</StyledButton>
+									<Icon variant="edit">edit</Icon>
 								</a>
 							</Link>
 						</StyledProjectName>
