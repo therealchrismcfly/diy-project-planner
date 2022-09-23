@@ -4,7 +4,7 @@ const StyledProjectName = styled.li`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 80%;
+	width: 90%;
 	height: 60px;
 	margin: 10px 0;
 	padding: 20px;

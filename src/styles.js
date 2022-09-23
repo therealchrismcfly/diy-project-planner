@@ -15,14 +15,13 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	body {
-		background-color: var(--lynxWhite);
+		background-color: var(--plainWhite);
 		font-size: 1rem;
 	}
 
 	:root{
 		--plasticCarrot:#f85d1d;
 		--loveVessel:#f60095;
-		--lynxWhite:#f7f7f7;
 		--plainWhite:#fff;
 		--chromaphobicBlack:#282828;
 	}
