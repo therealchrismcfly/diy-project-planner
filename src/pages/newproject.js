@@ -2,7 +2,11 @@ import {useState} from 'react';
 
 import Layout from '../components/Layout';
 import StyledButton from '../components/StyledButton/styled';
+import StyledForm from '../components/StyledForm/styled';
+import StyledHeadline from '../components/StyledHeadline/styled';
+import StyledHeadlineContainer from '../components/StyledHeadlineContainer/styled';
 import StyledInputField from '../components/StyledInputField/styled';
+import StyledNewProjectContainer from '../components/StyledNewProjectContainer/styled';
 import useStore from '../hooks/useStore';
 
 export default function NewProjectPage() {
@@ -11,28 +15,31 @@ export default function NewProjectPage() {
 
 	return (
 		<Layout>
-			<form
-				onSubmit={event => {
-					event.preventDefault();
-					addProject(inputValue);
-				}}
-			>
-				{' '}
-				<label htmlFor="projectname">
+			<StyledNewProjectContainer>
+				<StyledHeadlineContainer>
+					<StyledHeadline>Dein neues Projekt</StyledHeadline>
+				</StyledHeadlineContainer>
+				<StyledForm
+					onSubmit={event => {
+						event.preventDefault();
+						addProject(inputValue);
+					}}
+				>
 					{' '}
-					Add Project:
-					<StyledInputField
-						type="text"
-						id="projectname"
-						placeholder="What's the name of your new project?"
-						value={inputValue}
-						onChange={event => {
-							setInputValue(event.target.value);
-						}}
-					/>
-				</label>
-				<StyledButton type="submit">add</StyledButton>
-			</form>
+					<label htmlFor="projectname">
+						<StyledInputField
+							type="text"
+							id="projectname"
+							placeholder="What's the name of your new project?"
+							value={inputValue}
+							onChange={event => {
+								setInputValue(event.target.value);
+							}}
+						/>
+					</label>
+					<StyledButton type="submit">add</StyledButton>
+				</StyledForm>
+			</StyledNewProjectContainer>
 		</Layout>
 	);
 }
