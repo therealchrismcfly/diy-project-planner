@@ -19,7 +19,7 @@ export default function EditProjectPage() {
 	const addShoppingItem = useStore(state => state.addShoppingItem);
 	const router = useRouter();
 	const {id} = router.query;
-	const entry = projects.find(entry => entry.id === Number(id));
+	const entry = projects.find(entry => entry.id === String(id));
 
 	if (!entry) {
 		return;
