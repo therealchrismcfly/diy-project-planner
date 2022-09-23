@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-const StyledProjectContainer = styled.ul`
+const StyledForm = styled.form`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 300px;
 `;
-export default StyledProjectContainer;
+
+export default StyledForm;

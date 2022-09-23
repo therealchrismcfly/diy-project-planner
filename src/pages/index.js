@@ -4,7 +4,9 @@ import StyledCheckbox from '../components/Checkbox/styled';
 import IconButton from '../components/IconButton/styled';
 import Icon from '../components/Icons.js';
 import Layout from '../components/Layout';
-import StyledProjectContainer from '../components/StyledProjectContainer/styled';
+import StyledHeadline from '../components/StyledHeadline/styled';
+import StyledHeadlineContainer from '../components/StyledHeadlineContainer/styled';
+import StyledProjectList from '../components/StyledProjectList/styled';
 import StyledProjectName from '../components/StyledProjectName/styled';
 import useStore from '../hooks/useStore';
 
@@ -16,7 +18,11 @@ export default function IndexPage() {
 
 	return (
 		<Layout>
-			<StyledProjectContainer>
+			<StyledProjectList>
+				<StyledHeadlineContainer>
+					<StyledHeadline>Meine Projekte</StyledHeadline>
+				</StyledHeadlineContainer>
+
 				{sortedProjects.map(project => {
 					return (
 						<StyledProjectName key={project.id}>
@@ -43,7 +49,7 @@ export default function IndexPage() {
 						</StyledProjectName>
 					);
 				})}
-			</StyledProjectContainer>
+			</StyledProjectList>
 		</Layout>
 	);
 }

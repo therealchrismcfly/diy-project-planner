@@ -4,9 +4,9 @@ const StyledProjectName = styled.li`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 280px;
+	width: 80%;
 	height: 60px;
-	margin: 15px 0;
+	margin: 10px 0;
 	padding: 20px;
 	border-radius: 15px;
 	background-color: var(--plainWhite);
