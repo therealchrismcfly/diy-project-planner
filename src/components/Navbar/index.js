@@ -12,25 +12,25 @@ export default function Navbar() {
 			<Link href="/">
 				<a>
 					{router.pathname == '/' ? (
-						<Icon variant="listFilled" />
+						<Icon variant="listFilled" color="var(--loveVessel)" />
 					) : (
-						<Icon variant="list" />
+						<Icon variant="list" color="var(--plainWhite)" />
 					)}
 				</a>
 			</Link>
 			<Link href="/newproject">
 				<a>
 					<StyledAddButton>
-						<Icon variant="add" size="25px" />
+						<Icon variant="add" size="25px" color="var(--plainWhite)" />
 					</StyledAddButton>
 				</a>
 			</Link>
 			<Link href="/profile">
 				<a>
 					{router.pathname === '/profile' ? (
-						<Icon variant="profileFilled" />
+						<Icon variant="profileFilled" color="var(--loveVessel)" />
 					) : (
-						<Icon variant="profile"></Icon>
+						<Icon variant="profile" color="var(--plainWhite)"></Icon>
 					)}
 				</a>
 			</Link>

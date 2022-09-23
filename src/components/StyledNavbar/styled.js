@@ -6,9 +6,9 @@ const StyledNavbar = styled.nav`
 	bottom: 0;
 	align-items: center;
 	justify-content: space-around;
-	width: 300px;
+	width: 380px;
 	height: 60px;
-	border: 2px solid black;
+	background-color: var(--chromaphobicBlack);
 `;
 
 export default StyledNavbar;
