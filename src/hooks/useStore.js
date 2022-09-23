@@ -3,21 +3,13 @@ import create from 'zustand';
 
 const useStore = create(set => ({
 	projects: [
-		{name: 'Pflanzenleiter', id: nanoid()},
-		{name: 'Bilderrahmen', id: nanoid()},
+		{name: 'Pflanzenleiter', id: nanoid(), isDone: false},
+		{name: 'Bilderrahmen', id: nanoid(), isDone: false},
 	],
 	addProject: name => {
 		set(state => {
 			return {
 				projects: [...state.projects, {id: nanoid(), name, isDone: false}],
-			};
-		});
-	},
-	links: [],
-	addLink: name => {
-		set(state => {
-			return {
-				links: [...state.links, {id: nanoid(), name}],
 			};
 		});
 	},
@@ -30,14 +22,7 @@ const useStore = create(set => ({
 			};
 		});
 	},
-	shoppingItems: [],
-	addShoppingItem: name => {
-		set(state => {
-			return {
-				shoppingItems: [...state.shoppingItems, {id: nanoid(), name}],
-			};
-		});
-	},
+
 	checkProject: id => {
 		set(state => ({
 			projects: state.projects.map(project =>
