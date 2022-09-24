@@ -7,15 +7,13 @@ import StyledInputField from '../../components/StyledInputField/styled';
 import useStore from '../../hooks/useStore';
 
 export default function EditProjectPage() {
-	const [note, setNote] = useState('');
 	const projects = useStore(state => state.projects);
-
-	const notes = useStore(state => state.notes);
-	const addNote = useStore(state => state.addNote);
-
 	const router = useRouter();
 	const {id} = router.query;
 	const entry = projects.find(entry => entry.id === String(id));
+	const notes = useStore(state => state.notes);
+	const addNote = useStore(state => state.addNote);
+	const [note, setNote] = useState('');
 
 	if (!entry) {
 		return;
