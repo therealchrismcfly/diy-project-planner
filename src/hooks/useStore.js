@@ -23,7 +23,13 @@ const useStore = create(set => ({
 			return {
 				projects: [
 					...state.projects,
-					{id: nanoid(), name, isDone: false, notes: [], shoppingItems: []},
+					{
+						id: nanoid(),
+						name,
+						isDone: false,
+						notes: [],
+						shoppingItems: [],
+					},
 				],
 			};
 		});
