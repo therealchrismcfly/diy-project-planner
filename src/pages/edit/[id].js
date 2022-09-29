@@ -11,7 +11,6 @@ export default function EditProjectPage() {
 	const router = useRouter();
 	const {id} = router.query;
 	const entry = projects.find(entry => entry.id === String(id));
-	const notes = useStore(state => state.notes);
 	const addNote = useStore(state => state.addNote);
 	const [note, setNote] = useState('');
 
@@ -26,7 +25,7 @@ export default function EditProjectPage() {
 			<form
 				onSubmit={event => {
 					event.preventDefault();
-					addNote(note);
+					addNote(entry.id, note);
 				}}
 			>
 				<StyledInputField
@@ -37,10 +36,10 @@ export default function EditProjectPage() {
 					}}
 				/>
 				<StyledButton type="submit">add</StyledButton>
-				{notes.map(note => {
-					return <p key={note.id}>{note.name}</p>;
+				{entry.notes.map((note, id) => {
+					return <p key={id}>{note}</p>;
 				})}
-			</form>{' '}
+			</form>
 		</Layout>
 	);
 }
