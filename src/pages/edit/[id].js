@@ -13,6 +13,8 @@ export default function EditProjectPage() {
 	const entry = projects.find(entry => entry.id === String(id));
 	const addNote = useStore(state => state.addNote);
 	const [note, setNote] = useState('');
+	const addShoppingItem = useStore(state => state.addShoppingItem);
+	const [shoppingItems, setShoppingItems] = useState('');
 
 	if (!entry) {
 		return;
@@ -21,6 +23,25 @@ export default function EditProjectPage() {
 	return (
 		<Layout>
 			<h1>{entry.name}</h1>
+			<h2>Einkaufsliste</h2>
+			<form
+				onSubmit={event => {
+					event.preventDefault();
+					addShoppingItem(entry.id, shoppingItems);
+				}}
+			>
+				<StyledInputField
+					type="text"
+					value={shoppingItems}
+					onChange={event => {
+						setShoppingItems(event.target.value);
+					}}
+				/>
+				<StyledButton type="submit">add</StyledButton>
+				{entry.shoppingItems.map((shoppingItem, id) => {
+					return <p key={id}>{shoppingItem}</p>;
+				})}
+			</form>
 			<h2>Notizen</h2>
 			<form
 				onSubmit={event => {
