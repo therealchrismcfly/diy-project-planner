@@ -6,10 +6,10 @@ const useStore = create(set => ({
 		{name: 'Pflanzenleiter', id: nanoid(), isDone: false, notes: ['Holz kaufen']},
 		{name: 'Bilderrahmen', id: nanoid(), isDone: false, notes: ['Farbe kaufen']},
 	],
-	addProject: (name, notes) => {
+	addProject: name => {
 		set(state => {
 			return {
-				projects: [...state.projects, {id: nanoid(), name, isDone: false, notes}],
+				projects: [...state.projects, {id: nanoid(), name, isDone: false, notes: []}],
 			};
 		});
 	},
